@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using moduloAdministraciónUsuarios.Service;
+using moduloAdministraciónUsuarios.ViewModel;
 
 namespace moduloAdministraciónUsuarios.Controllers
 {
@@ -26,6 +27,36 @@ namespace moduloAdministraciónUsuarios.Controllers
             var result = _usuarioService.GetAllCargo();
             return new JsonResult(result);
         }
+
+        #region endpoit Usuario
+        [HttpPost("RegistrarUsuario")]
+        public IActionResult RegistrarUsuario(UserVM usuario)
+        {
+            var result = _usuarioService.registrarUsuario(usuario);
+            return new JsonResult(result);
+        }
+
+        [HttpGet("GetAllUsuarios")]
+        public IActionResult GetAllUsuarios()
+        {
+            var result = _usuarioService.GetAllUsuarios();
+            return new JsonResult(result);
+        }
+
+        [HttpPost("ActualizarUsuario")]
+        public IActionResult ActualizarUsuario(UserVM usuario)
+        {
+            var result = _usuarioService.actualizarUser(usuario);
+            return new JsonResult(result);
+        }
+
+        [HttpPost("EliminacionLogicaUsers")]
+        public IActionResult EliminacionLogicaUsers(string user)
+        {
+            var result = _usuarioService.eliminarUser(user);
+            return new JsonResult(result);
+        }
+        #endregion
 
     }
 }

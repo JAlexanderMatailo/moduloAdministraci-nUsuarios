@@ -9,7 +9,7 @@ namespace moduloAdministraciónUsuarios.Service
         List<Cargo> GetAllCargo();
 
         bool registrarUsuario(UserVM userVM);
-        List<UserVM> GetAll();
+        List<UserVM> GetAllUsuarios();
         bool actualizarUser(UserVM user);
         bool eliminarUser(string nombreUsuario);
     }

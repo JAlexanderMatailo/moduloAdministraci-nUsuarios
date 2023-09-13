@@ -89,7 +89,7 @@ namespace moduloAdministraciónUsuarios.Service
             return registrado;
         }
 
-        public List<UserVM> GetAll()
+        public List<UserVM> GetAllUsuarios()
         {
             List<UserVM> listausers = new List<UserVM>();
             using (var context = _context.Database.BeginTransaction())
