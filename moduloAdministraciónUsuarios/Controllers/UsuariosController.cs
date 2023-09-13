@@ -1,22 +1,31 @@
 ﻿using dbPrueba;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using moduloAdministraciónUsuarios.Service;
 
 namespace moduloAdministraciónUsuarios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsuariosController : Controller
     {
-        private pruebaContext _context;
-        public UsuariosController(pruebaContext context)
+        private readonly IUsuario _usuarioService;
+        public UsuariosController(IUsuario usuarioService)
         {
-            _context = context;
+            _usuarioService = usuarioService;
         }
-        [HttpGet("Departamentos")]
-        public IEnumerable<Departamento> GetCargos() => _context.Departamentos.ToList();
+        [HttpGet("GetAllDepartamentos")]
+        public IActionResult GetAllDepartamentos()
+        {
+            var result = _usuarioService.GetAllDepartamentos();
+            return new JsonResult(result);
+        }
 
-        [HttpGet("Cargos")]
-        public IEnumerable<Cargo> getCargos() => _context.Cargos.ToList();
+        [HttpGet("GetAllCargo")]
+        public IActionResult GetAllCargo() { 
+            var result = _usuarioService.GetAllCargo();
+            return new JsonResult(result);
+        }
+
     }
 }
