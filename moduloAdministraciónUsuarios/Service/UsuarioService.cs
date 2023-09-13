@@ -1,7 +1,7 @@
 ﻿using dbPrueba;
-using moduloAdministraciónUsuarios.ViewModel;
+using moduloAdministracionUsuarios.ViewModel;
 
-namespace moduloAdministraciónUsuarios.Service
+namespace moduloAdministracionUsuarios.Service
 {
     public class UsuarioService : IUsuario
     {
@@ -51,7 +51,7 @@ namespace moduloAdministraciónUsuarios.Service
         public bool registrarUsuario(UserVM userVM)
         {
 
-            var existe = _context.Users.Where(x => x.usuario == userVM.usuario).Any();
+            var existe = _context.Users.Where(x => x.IdUsers == userVM.IdUsers).Any();
             bool registrado = false;
             if (!existe)
             {
@@ -78,8 +78,9 @@ namespace moduloAdministraciónUsuarios.Service
 
                         registrado = true;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+
                         context.Rollback();
                         registrado = false;
                     }
@@ -92,42 +93,49 @@ namespace moduloAdministraciónUsuarios.Service
         public List<UserVM> GetAllUsuarios()
         {
             List<UserVM> listausers = new List<UserVM>();
-            using (var context = _context.Database.BeginTransaction())
-            {
-                var consulta = (from usuario in _context.Users
+            var consulta = (from usuario in _context.Users
                                 join departamento in _context.Departamentos
                                 on usuario.IdDepartamentos equals departamento.IdDepartamento
                                 join cargos in _context.Cargos
                                 on usuario.IdCargos equals cargos.IdCargos
                                 where usuario.estado == true
-
                                 select new
                                 {
                                     usuario.IdUsers,
-                                    usuario.usuario,
                                     usuario.primerNombre,
+                                    usuario.segundoNombre,
                                     usuario.primerApellido,
-                                    IdDepartamentos = departamento.IdDepartamento,
-                                    nombreDepartamentos = departamento.nombreDepartamento,
+                                    usuario.segundoApellido,
+                                    Estado = usuario.estado,
+                                    Correo = usuario.email,
+                                    Usuario = usuario.usuario,
                                     IdCargo = cargos.IdCargos,
                                     nombresCargo = cargos.nombreCargo,
-                                    usuario.email
+                                    IdDepartamentos = departamento.IdDepartamento,
+                                    nombreDepartamentos = departamento.nombreDepartamento
                                 }
-                                );
+                                ).ToList();
                 foreach (var user in consulta)
                 {
                     UserVM userVM = new UserVM
                     {
-                        usuario = user.usuario,
+                        IdUsers = user.IdUsers,
+                        usuario = user.Usuario,
                         primerNombre = user.primerNombre,
+                        segundoNombre = user.segundoNombre,
                         primerApellido = user.primerApellido,
+                        segundoApellido = user.segundoApellido,
+                        estado = user.Estado,
                         IdCargos = user.IdCargo,
+                        nombreCargo = user.nombresCargo,
                         IdDepartamentos = user.IdDepartamentos,
-                        email = user.email
+                        email = user.Correo,
+                        nombreDepartamento = user.nombreDepartamentos
+                        
                     };
                     listausers.Add(userVM);
                 }
-            }
+            
             return listausers;
         }
 

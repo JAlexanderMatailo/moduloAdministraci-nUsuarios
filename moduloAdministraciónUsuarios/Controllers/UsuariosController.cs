@@ -1,10 +1,10 @@
 ﻿using dbPrueba;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using moduloAdministraciónUsuarios.Service;
-using moduloAdministraciónUsuarios.ViewModel;
+using moduloAdministracionUsuarios.Service;
+using moduloAdministracionUsuarios.ViewModel;
 
-namespace moduloAdministraciónUsuarios.Controllers
+namespace moduloAdministracionUsuarios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

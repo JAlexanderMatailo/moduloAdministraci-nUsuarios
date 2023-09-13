@@ -1,7 +1,7 @@
 ﻿using dbPrueba;
-using moduloAdministraciónUsuarios.ViewModel;
+using moduloAdministracionUsuarios.ViewModel;
 
-namespace moduloAdministraciónUsuarios.Service
+namespace moduloAdministracionUsuarios.Service
 {
     public interface IUsuario
     {

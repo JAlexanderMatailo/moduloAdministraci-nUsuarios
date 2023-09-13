@@ -1,6 +1,6 @@
 using dbPrueba;
 using Microsoft.EntityFrameworkCore;
-using moduloAdministraciónUsuarios.Service;
+using moduloAdministracionUsuarios.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

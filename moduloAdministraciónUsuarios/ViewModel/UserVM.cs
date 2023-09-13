@@ -1,4 +1,4 @@
-﻿namespace moduloAdministraciónUsuarios.ViewModel
+﻿namespace moduloAdministracionUsuarios.ViewModel
 {
     public class UserVM
     {
@@ -11,6 +11,8 @@
         public string email { get; set; }
         public bool estado { get; set; }
         public int IdDepartamentos { get; set; }
+        public string nombreDepartamento { get; set; }
         public int IdCargos { get; set; }
+        public string nombreCargo { get; set; }
     }
 }

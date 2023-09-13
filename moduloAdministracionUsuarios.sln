@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloAdministraciónUsuarios", "moduloAdministraciónUsuarios\moduloAdministraciónUsuarios.csproj", "{9BD52699-7A7C-431B-8D71-5755E704F306}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloAdministracionUsuarios", "moduloAdministraciónUsuarios\moduloAdministracionUsuarios.csproj", "{9BD52699-7A7C-431B-8D71-5755E704F306}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbPrueba", "dbPrueba\dbPrueba.csproj", "{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}"
 EndProject
