@@ -19,6 +19,8 @@ namespace dbPrueba
         public string segundoNombre { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
+        public string email { get; set; }
+        public bool estado { get ; set; }
         public int IdDepartamentos { get; set; }
         public int IdCargos { get; set; }
     }

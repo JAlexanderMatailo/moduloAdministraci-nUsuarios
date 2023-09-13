@@ -1,4 +1,5 @@
 ﻿using dbPrueba;
+using moduloAdministraciónUsuarios.ViewModel;
 
 namespace moduloAdministraciónUsuarios.Service
 {
@@ -43,6 +44,16 @@ namespace moduloAdministraciónUsuarios.Service
                 listaCargos.Add(Ucargos);
             }
             return listaCargos;
+        }
+        #endregion
+
+        #region Usuarios
+        public bool registrarUsuario(UserVM userVM)
+        {
+            var existe = _context.Users.Where(x => x.usaurio == userVM.usaurio).Any();
+            bool registrado = false;
+
+            return registrado;
         }
         #endregion
     }
