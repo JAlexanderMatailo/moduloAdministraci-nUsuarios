@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moduloAdministraciónUsuarios", "moduloAdministraciónUsuarios\moduloAdministraciónUsuarios.csproj", "{9BD52699-7A7C-431B-8D71-5755E704F306}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbPrueba", "dbPrueba\dbPrueba.csproj", "{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9BD52699-7A7C-431B-8D71-5755E704F306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BD52699-7A7C-431B-8D71-5755E704F306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BD52699-7A7C-431B-8D71-5755E704F306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02C0B01-57D2-4804-BC4A-D8857CAC7E8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
