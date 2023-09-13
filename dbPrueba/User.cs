@@ -14,7 +14,7 @@ namespace dbPrueba
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUsers { get; set; }
 
-        public string usaurio{ get; set; }
+        public string usuario{ get; set; }
         public string primerNombre { get; set; }
         public string segundoNombre { get; set; }
         public string primerApellido { get; set; }
