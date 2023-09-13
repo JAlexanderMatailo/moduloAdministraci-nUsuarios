@@ -20,11 +20,11 @@ builder.Services.AddDbContext<pruebaContext>(options =>
 var app = builder.Build();
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<pruebaContext>();
-    context.Database.Migrate();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var context = scope.ServiceProvider.GetRequiredService<pruebaContext>();
+//    context.Database.Migrate();
+//}
 
 
 
